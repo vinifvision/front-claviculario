@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  /* Cores baseadas nas imagens do Figma */
+  --color-senac-blue: #1650a7;
+  --color-senac-blue-title: #002d71;
+  --color-senac-orange: #f28b24;
+  --color-background-light: #f4f6f8;
+
+  /* Fonte */
+  --font-sans: "Inter", sans-serif;
+}
+
+/* O reset de altura e fundo continua o mesmo */
+html,
+body,
+#root {
+  height: 100%;
+  background-color: var(--color-background-light);
+}
