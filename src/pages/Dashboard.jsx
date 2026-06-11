@@ -80,7 +80,7 @@ export default function Dashboard() {
         {cardsData.map((card) => (
           <div
             key={card.id}
-            className="bg-transparent rounded-[20px] py-4 px-4 flex flex-col items-center justify-center border border-gray-400"
+            className="bg-white rounded-[20px] py-4 px-4 flex flex-col items-center justify-center shadow-md border border-gray-300"
           >
             {/* whitespace-pre-line permite que o "\n" quebre a linha no React */}
             <h3 className="text-senac-blue-title font-normal text-center text-lg leading-tight mb-4 whitespace-pre-line">
@@ -96,7 +96,7 @@ export default function Dashboard() {
       {/* Área Inferior: Tabela e Gerenciamento */}
       <div className="flex-1 grid grid-cols-4 gap-6 min-h-0">
         {/* Tabela de Histórico mais larga (ocupa 3 das 4 colunas) */}
-        <div className="col-span-3 bg-transparent rounded-[20px] p-6 border border-gray-400 flex flex-col">
+        <div className="col-span-3 bg-white rounded-[20px] p-6 shadow-md border border-gray-300 flex flex-col">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-xl font-bold text-senac-blue-title">
               Histórico de chaves
@@ -152,7 +152,7 @@ export default function Dashboard() {
         </div>
 
         {/* Gerenciamento de Chaves mais estreita (ocupa 1 das 4 colunas) */}
-        <div className="col-span-1 bg-transparent rounded-[20px] p-6 border border-gray-400 flex flex-col">
+        <div className="col-span-1 bg-white rounded-[20px] p-6 shadow-md border border-gray-300 flex flex-col">
           <h2 className="text-xl font-bold text-center text-senac-blue-title mb-6">
             Gerenciamento de
             <br />
