@@ -1,7 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import escudoImg from "../assets/escudo.svg";
 
 export default function Login() {
+  const navigate = useNavigate();
+
+  // Função pra simular o login e trocar de tela
+  const handleLogin = (e) => {
+    e.preventDefault();
+    navigate("/dashboard");
+  };
+
   return (
     <div className="flex h-screen w-full bg-background-light">
       {/* Lado Esquerdo painel azul */}
@@ -23,7 +32,7 @@ export default function Login() {
             Conecte-se com uma conta
           </p>
 
-          <form className="flex flex-col gap-5">
+          <form onSubmit={handleLogin} className="flex flex-col gap-5">
             <input
               type="text"
               placeholder="Usuário"
@@ -46,8 +55,8 @@ export default function Login() {
             </div>
 
             <button
-              type="button"
-              className="mt-4 w-full bg-senac-blue text-white font-semibold text-lg py-3 rounded-3xl hover:bg-blue-800 transition-colors shadow-md"
+              type="submit"
+              className="mt-4 cursor-pointer w-full bg-senac-blue text-white font-semibold text-lg py-3 rounded-3xl hover:bg-blue-800 transition-colors shadow-md"
             >
               Entrar
             </button>
