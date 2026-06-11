@@ -157,6 +157,7 @@ export default function Usuarios() {
                   <option value="Monitor">Monitor(a)</option>
                   <option value="Coordenador">Coordenador(a)</option>
                   <option value="Porteiro">Porteiro(a)</option>
+                  <option value="Representante">Representante(a)</option>
                 </select>
               </div>
 
