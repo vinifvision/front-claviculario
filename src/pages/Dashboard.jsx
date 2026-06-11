@@ -55,7 +55,7 @@ export default function Dashboard() {
       title: "Alertas de\npânicos",
       value: metrics?.panicos,
       colorClass: "text-red-600",
-    }, // Mantive a cor do texto do painel
+    },
   ];
 
   if (loading) {
@@ -170,7 +170,6 @@ export default function Dashboard() {
                 <div className="w-8 h-8 rounded-full bg-gray-300 flex-shrink-0" />
                 <div className="flex flex-col gap-1">
                   <p className="text-xs text-gray-700 leading-tight">
-                    {/* Aqui quebramos o texto destacando o Pedro em negrito se quiser, mas mantive o texto puro do seu mock */}
                     {item.texto}
                   </p>
                   <span className="text-[10px] text-gray-400 align-right self-end mt-1">

@@ -1,5 +1,11 @@
 // src/services/api.js
-import { mockMetrics, mockHistorico, mockGerenciamento } from "./mockData";
+import {
+  mockMetrics,
+  mockHistorico,
+  mockGerenciamento,
+  mockSalas,
+  mockUsuarios,
+} from "./mockData";
 
 // Essa função simula uma requisição HTTP real de forma profissional
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -11,15 +17,27 @@ export const DashboardService = {
     return mockMetrics;
   },
 
-  // Busca os dados da tabela de histórico
   getHistorico: async () => {
-    await delay(1000); // Fingindo latência de rede
+    await delay(1000);
     return mockHistorico;
   },
 
-  // Busca os dados da lista de repasses lateral
   getGerenciamento: async () => {
-    await delay(600); // Fingindo latência de rede
+    await delay(600);
     return mockGerenciamento;
+  },
+};
+
+export const SalasServices = {
+  getSalas: async () => {
+    await delay(800);
+    return mockSalas;
+  },
+};
+
+export const UsuariosServices = {
+  getUsuarios: async () => {
+    await delay(700);
+    return mockUsuarios;
   },
 };
