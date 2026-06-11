@@ -13,7 +13,7 @@ export default function Login() {
 
   return (
     <div className="flex h-screen w-full bg-background-light">
-      {/* Lado Esquerdo painel azul */}
+      {/* Lado esquerdo painel azul */}
       <div className="w-1/2 bg-senac-blue rounded-r-[50px] flex items-center justify-center shadow-lg">
         <img
           src={escudoImg}
@@ -22,7 +22,7 @@ export default function Login() {
         />
       </div>
 
-      {/* Lado Direito formulário */}
+      {/* Lado direito formulário */}
       <div className="w-1/2 flex flex-col items-center justify-center px-12">
         <div className="w-full max-w-sm text-center">
           <h1 className="text-4xl font-bold text-senac-blue-title mb-2">
