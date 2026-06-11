@@ -2,6 +2,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import Salas from "./pages/Salas";
+import Usuarios from "./pages/Usuarios";
 import Layout from "./components/Layout";
 
 function App() {
@@ -12,22 +14,8 @@ function App() {
 
         <Route element={<Layout />}>
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route
-            path="/salas"
-            element={
-              <h1 className="text-3xl font-bold text-senac-blue-title">
-                Gerenciamento de Salas
-              </h1>
-            }
-          />
-          <Route
-            path="/usuarios"
-            element={
-              <h1 className="text-3xl font-bold text-senac-blue-title">
-                Usuários
-              </h1>
-            }
-          />
+          <Route path="/salas" element={<Salas />} />
+          <Route path="/usuarios" element={<Usuarios />} />
         </Route>
       </Routes>
     </Router>
