@@ -9,7 +9,7 @@ export default function Layout() {
         <Sidebar />
       </div>
 
-      <main className="flex-1 overflow-y-auto py-5 pr-5 pl-10">
+      <main className="flex-1 overflow-y-auto py-5 pr-5 pl-10 animate-[fadeIn_0.5s_ease-out]">
         <Outlet />
       </main>
     </div>
