@@ -76,7 +76,7 @@ export default function Usuarios() {
           usuariosFiltrados.map((user) => (
             <div
               key={user.id}
-              className="bg-gray-100 rounded-[20px] p-6 flex items-center gap-5 shadow-sm border border-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+              className="bg-white rounded-[20px] p-6 flex items-center gap-5 shadow-sm border border-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
             >
               {/* Avatar genérico */}
               <div className="w-14 h-14 bg-gray-300 rounded-full flex items-center justify-center flex-shrink-0">
