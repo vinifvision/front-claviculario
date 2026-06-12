@@ -109,7 +109,7 @@ export const mockSalas = [
 export const mockUsuarios = [
   { id: 1, nome: "João Silva", papel: "Professor", matricula: "102938" },
   { id: 2, nome: "Maria Costa", papel: "Professora", matricula: "293847" },
-  { id: 3, nome: "Rafael Pereira", papel: "Aluno", matricula: "384756" },
+  { id: 3, nome: "Rafael Pereira", papel: "Representante", matricula: "384756" },
   { id: 4, nome: "Pedro", papel: "Monitor", matricula: "475612" },
   { id: 5, nome: "Ana Nunes", papel: "Professora", matricula: "561234" },
 ];

@@ -5,6 +5,7 @@ import Dashboard from "./pages/Dashboard";
 import Salas from "./pages/Salas";
 import Usuarios from "./pages/Usuarios";
 import Layout from "./components/Layout";
+import Autorizacoes from "./pages/Autorizacoes";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/salas" element={<Salas />} />
           <Route path="/usuarios" element={<Usuarios />} />
+          <Route path="/autorizacoes" element={<Autorizacoes />} />
         </Route>
       </Routes>
     </Router>

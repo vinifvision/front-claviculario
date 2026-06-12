@@ -41,3 +41,10 @@ export const UsuariosServices = {
     return mockUsuarios;
   },
 };
+
+export const AutorizacoesService = {
+  getUsuarios: async () => {
+    await delay(700);
+    return mockUsuarios;
+  },
+};
