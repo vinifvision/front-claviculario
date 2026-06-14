@@ -28,9 +28,8 @@ Devido ao desenvolvimento paralelo das equipes de Front-end e Back-end, a arquit
 
 Nenhuma página do React acessa dados estáticos diretamente no componente. Em vez disso, as páginas consomem funções assíncronas de ```src/services/api.js```.
 
-Fase Atual (PoC): Os serviços retornam dados simulados (```mockData.js```) após um ```delay``` (simulando latência de rede). Os dados mockados foram construídos com "Storytelling", garantindo que a narrativa bata entre todas as telas (ex: se uma chave é retirada no Dashboard, a sala correspondente aparece "Em aula").
-
-Fase de Produção: Bastará alterar o conteúdo de ```api.js``` para realizar o ```fetch()``` ou ```axios.get()``` real para os endpoints criados em Django (ex: ```/api/chaves/```), sem alterar nenhuma linha de código nas telas (```/pages```).
+- Fase Atual (PoC): Os serviços retornam dados simulados (```mockData.js```) após um ```delay``` (simulando latência de rede). Os dados mockados foram construídos com "Storytelling", garantindo que a narrativa bata entre todas as telas (ex: se uma chave é retirada no Dashboard, a sala correspondente aparece "Em aula").
+- Fase de Produção: Bastará alterar o conteúdo de ```api.js``` para realizar o ```fetch()``` ou ```axios.get()``` real para os endpoints criados em Django (ex: ```/api/chaves/```), sem alterar nenhuma linha de código nas telas (```/pages```).
 
 ## 5. Módulos e Páginas Desenvolvidas
 ### 5.1. ```Layout.jsx``` e ```Sidebar.jsx```
@@ -57,3 +56,18 @@ Fase de Produção: Bastará alterar o conteúdo de ```api.js``` para realizar o
 - Conceito: Controle de professores, monitores e administradores.
 - Lógica: Busca reativa (Search Input) varrendo nome e matrícula.
 - UX/UI: Implementa Modal (Popup) de cadastro com efeito de escurecimento de fundo (```backdrop-blur-sm```) e animações de zoom-in, controlando a exibição via booleano (```isModalOpen```).
+
+## 6. Fluxo de Trabalho e Git (Guia para Novos Desenvolvedores)
+Para garantir a integridade da branch ```main```, todos os novos desenvolvimentos devem seguir o fluxo de Feature Branching:
+
+1. Sincronize seu repositório local: ```git pull origin main```
+2. Crie sua branch de desenvolvimento: ```git checkout -b feat/nome-da-sua-tarefa```
+3. Trabalhe, crie seus commits organizados em passos lógicos.
+4. Envie sua branch para o repositório: ```git push -u origin feat/nome-da-sua-tarefa```
+5. Realize o Merge (com Code Review, se necessário) de volta para a ```main```.
+
+**Próximos passos previstos:**
+
+- Criação das rotas e telas de ```/autorizacoes``` e ```/audit```.
+- Substituição do ```api.js``` pela chamada HTTP (REST) oficial.
+- Integração de WebSockets via Django Channels para o Botão de Pânico.
