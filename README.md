@@ -31,3 +31,39 @@ Nenhuma página do React acessa dados estáticos diretamente no componente. Em v
 Fase Atual (PoC): Os serviços retornam dados simulados (```mockData.js```) após um ```delay``` (simulando latência de rede). Os dados mockados foram construídos com "Storytelling", garantindo que a narrativa bata entre todas as telas (ex: se uma chave é retirada no Dashboard, a sala correspondente aparece "Em aula").
 
 Fase de Produção: Bastará alterar o conteúdo de ```api.js``` para realizar o ```fetch()``` ou ```axios.get()``` real para os endpoints criados em Django (ex: ```/api/chaves/```), sem alterar nenhuma linha de código nas telas (```/pages```).
+
+## 5. Módulos e Páginas Desenvolvidas
+5.1. ```Layout.jsx``` e ```Sidebar.jsx```
+Responsáveis pela moldura estrutural ("Dashboard Container").
+
+Utiliza o hook ```NavLink``` do React Router para detectar dinamicamente a rota atual da barra de endereços do navegador e aplicar formatação de "estado ativo" (fundo escurecido e texto destacado) ao menu lateral.
+
+Implementa animações de transição de fade-in no ```<main>```.
+
+5.2. ```Login.jsx```
+Interface de autenticação dividida em Grid (50/50).
+
+Preparada para receber a lógica de geração e persistência de token (JWT) no ```localStorage```.
+
+Redirecionamento simulado utilizando o hook ```useNavigate```.
+
+5.3. ```Dashboard.jsx```
+Conceito: Painel centralizado de métricas e auditoria rápida.
+
+Componentização Interna: Renderização de métricas de topo baseada em array dinâmico (```.map()```), tabela de Histórico e listagem de Gerenciamento.
+
+Estado: Gerencia os dados assíncronos com exibição de Loading spinner enquanto resolve as Promises do serviço.
+
+5.4. ```Salas.jsx```
+Conceito: Visão gerencial sobre o status de ocupação dos ambientes.
+
+Lógica: Implementa filtros locais dinâmicos em tempo real (Andar, Tipo, Status) utilizando múltiplos estados combinados com ```.filter()```.
+
+Renderização Condicional: Altera a UI e as tags de status ("Disponível" x "Em aula com Professor X") dinamicamente baseando-se nos atributos do objeto consumido da API.
+
+5.5. ```Usuarios.jsx```
+Conceito: Controle de professores, monitores e administradores.
+
+Lógica: Busca reativa (Search Input) varrendo nome e matrícula.
+
+UX/UI: Implementa Modal (Popup) de cadastro com efeito de escurecimento de fundo (```backdrop-blur-sm```) e animações de zoom-in, controlando a exibição via booleano (```isModalOpen```).
