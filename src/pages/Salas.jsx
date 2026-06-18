@@ -126,13 +126,8 @@ export default function Salas() {
               <div className="bg-white border border-gray-200 text-gray-700 font-medium py-4 rounded-2xl text-center shadow-sm flex items-center justify-center">
                 {item.tipo}
               </div>
-              <div
-                className={`border py-4 rounded-2xl text-center flex items-center justify-center transition-all ${
-                  item.status === "Pânico"
-                    ? "border-red-600 border-2 animate-sirene text-red-900"
-                    : "bg-white border-gray-200 shadow-sm"
-                }`}
-              >
+              {/* Coluna Limpa de Status (Sem pânico falso) */}
+              <div className="bg-white border border-gray-200 py-4 rounded-2xl text-center shadow-sm flex items-center justify-center">
                 {item.status === "Disponível" && (
                   <span className="text-green-500 font-bold tracking-wide">
                     Disponível
@@ -147,13 +142,6 @@ export default function Salas() {
                     <span className="text-senac-orange font-semibold">
                       {item.status}
                     </span>
-                  </span>
-                )}
-
-                {item.status === "Pânico" && (
-                  <span className="text-red-600 font-black tracking-widest uppercase text-base flex items-center gap-2">
-                    <ShieldAlert size={20} className="text-red-600" />
-                    Acionamento de Pânico!
                   </span>
                 )}
               </div>
