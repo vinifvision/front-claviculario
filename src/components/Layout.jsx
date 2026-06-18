@@ -1,8 +1,28 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
 import Sidebar from "./Sidebar";
 
 export default function Layout() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleSidebarClick = (e) => {
+      // Verifica se o clique ocorreu no card laranja do coordenador ou em seus filhos
+      const coordenadorCard = e.target.closest(".bg-senac-orange");
+      if (coordenadorCard) {
+        navigate("/coordenador");
+      }
+    };
+
+    // Adiciona o ouvinte de clique global na janela
+    window.addEventListener("click", handleSidebarClick);
+
+    // Remove o ouvinte ao desmontar o componente para evitar vazamento de memória
+    return () => {
+      window.removeEventListener("click", handleSidebarClick);
+    };
+  }, [navigate]);
+
   return (
     <div className="flex h-screen w-full bg-background-light overflow-hidden">
       <div className="py-4 pl-2 h-full">
