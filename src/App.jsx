@@ -6,7 +6,7 @@ import Usuarios from "./pages/Usuarios";
 import Layout from "./components/Layout";
 import Autorizacoes from "./pages/Autorizacoes";
 import Config from "./pages/Config";
-import ButtonPage from "./pages/button"; // Forçado com 'b' minúsculo para alinhar com o arquivo
+import ButtonPage from "./pages/Button";
 
 function App() {
   return (
