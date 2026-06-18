@@ -60,11 +60,6 @@ export default function Sidebar() {
             <ShieldCheck size={22} />
             <span>Autorizações</span>
           </NavLink>
-
-          <NavLink to="/audit" className={navLinkClass}>
-            <List size={22} />
-            <span>Audit log</span>
-          </NavLink>
         </nav>
       </div>
 
