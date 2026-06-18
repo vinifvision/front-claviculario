@@ -6,6 +6,7 @@ import Salas from "./pages/Salas";
 import Usuarios from "./pages/Usuarios";
 import Layout from "./components/Layout";
 import Autorizacoes from "./pages/Autorizacoes";
+import Config from "./pages/Config";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/salas" element={<Salas />} />
           <Route path="/usuarios" element={<Usuarios />} />
           <Route path="/autorizacoes" element={<Autorizacoes />} />
+          <Route path="/configuracoes" element={<Config />} />
         </Route>
       </Routes>
     </Router>
