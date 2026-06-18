@@ -40,3 +40,20 @@ body,
     transform: scale(1);
   }
 }
+
+@keyframes sireneVermelha {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+    background-color: #fee2e2; /* bg-red-100 */
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(220, 38, 38, 1);
+    background-color: #fca5a5; /* bg-red-300 */
+  }
+}
+
+.animate-sirene {
+  /* 0.6s deixa o piscar bem rápido e urgente */
+  animation: sireneVermelha 0.6s ease-in-out infinite;
+}

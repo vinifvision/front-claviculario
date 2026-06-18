@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Filter } from "lucide-react";
+import { Filter, ShieldAlert } from "lucide-react";
 import { SalasServices } from "../services/api"; // Importando API simulada
 
 export default function Salas() {
@@ -126,12 +126,20 @@ export default function Salas() {
               <div className="bg-white border border-gray-200 text-gray-700 font-medium py-4 rounded-2xl text-center shadow-sm flex items-center justify-center">
                 {item.tipo}
               </div>
-              <div className="bg-white border border-gray-200 py-4 rounded-2xl text-center shadow-sm flex items-center justify-center">
-                {item.status === "Disponível" ? (
-                  <span className="text-green-400 font-medium tracking-wide">
+              <div
+                className={`border py-4 rounded-2xl text-center flex items-center justify-center transition-all ${
+                  item.status === "Pânico"
+                    ? "border-red-600 border-2 animate-sirene text-red-900"
+                    : "bg-white border-gray-200 shadow-sm"
+                }`}
+              >
+                {item.status === "Disponível" && (
+                  <span className="text-green-500 font-bold tracking-wide">
                     Disponível
                   </span>
-                ) : (
+                )}
+
+                {(item.status === "Em aula" || item.status === "Atrasado") && (
                   <span className="text-gray-700 font-medium text-sm">
                     {item.ocupanteTitulo}{" "}
                     <strong className="text-black">{item.ocupanteNome}</strong>{" "}
@@ -139,6 +147,13 @@ export default function Salas() {
                     <span className="text-senac-orange font-semibold">
                       {item.status}
                     </span>
+                  </span>
+                )}
+
+                {item.status === "Pânico" && (
+                  <span className="text-red-600 font-black tracking-widest uppercase text-base flex items-center gap-2">
+                    <ShieldAlert size={20} className="text-red-600" />
+                    Acionamento de Pânico!
                   </span>
                 )}
               </div>

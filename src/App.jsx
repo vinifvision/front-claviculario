@@ -6,8 +6,7 @@ import Usuarios from "./pages/Usuarios";
 import Layout from "./components/Layout";
 import Autorizacoes from "./pages/Autorizacoes";
 import Config from "./pages/Config";
-import Coordenador from "./pages/Coordenador";
-import ButtonPage from "./pages/button"; // Importa a página do botão de volta
+import ButtonPage from "./pages/button"; // Forçado com 'b' minúsculo para alinhar com o arquivo
 
 function App() {
   return (
@@ -23,7 +22,7 @@ function App() {
           <Route path="/usuarios" element={<Usuarios />} />
           <Route path="/autorizacoes" element={<Autorizacoes />} />
           <Route path="/configuracoes" element={<Config />} />
-          
+
           {/* Rota correta para a página do botão de alerta */}
           <Route path="/button" element={<ButtonPage />} />
 
