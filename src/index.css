@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @theme {
   /* Cores baseadas nas imagens do Figma */
@@ -7,18 +6,18 @@
   --color-senac-blue-title: #002d71;
   --color-senac-orange: #f28b24;
   --color-background-light: #f4f6f8;
-
-  /* Fonte Oficial do Sistema */
-  --font-sans: "Poppins", sans-serif;
 }
 
-/* O reset de altura e fundo */
+/* O reset à prova de bala usando o asterisco (*) */
+* {
+  font-family: "Poppins", sans-serif !important;
+}
+
 html,
 body,
 #root {
   height: 100%;
   background-color: var(--color-background-light);
-  font-family: var(--font-sans) !important;
 }
 
 @keyframes fadeIn {
