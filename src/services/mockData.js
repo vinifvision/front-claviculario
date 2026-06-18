@@ -104,16 +104,6 @@ export const mockSalas = [
     horario: null,
     status: "Disponível",
   },
-  {
-    id: 6,
-    andar: "15º andar",
-    sala: "1502",
-    tipo: "Laboratório",
-    ocupanteNome: "Emergência",
-    ocupanteTitulo: "⚠️",
-    horario: "Agora",
-    status: "Pânico",
-  },
 ];
 
 export const mockUsuarios = [
