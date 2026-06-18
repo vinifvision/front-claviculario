@@ -1,45 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
 
 export default function Layout() {
-  const [isPanic, setIsPanic] = useState(false);
-  const audioRef = useRef(new Audio("/sirene.mp3"));
-
-  useEffect(() => {
-    const canal = new BroadcastChannel("canal_panico");
-
-    const ligarAlarme = () => {
-      setIsPanic(true);
-      audioRef.current.loop = true;
-      audioRef.current.play().catch((e) => console.log("Erro de áudio:", e));
-    };
-
-    const desligarAlarme = () => {
-      setIsPanic(false);
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
-    };
-
-    // Escuta o evento desta mesma aba
-    const handleLocalEvent = (e) => {
-      if (e.detail === "LIGAR") ligarAlarme();
-      if (e.detail === "DESLIGAR") desligarAlarme();
-    };
-    window.addEventListener("panicoLocal", handleLocalEvent);
-
-    // Escuta o Walkie-Talkie das outras abas
-    canal.onmessage = (evento) => {
-      if (evento.data === "LIGAR") ligarAlarme();
-      if (evento.data === "DESLIGAR") desligarAlarme();
-    };
-
-    return () => {
-      window.removeEventListener("panicoLocal", handleLocalEvent);
-      canal.close();
-    };
-  }, []);
-
   return (
     <div className="flex h-screen w-full bg-background-light overflow-hidden relative">
       <div className="py-4 pl-2 h-full z-10">
