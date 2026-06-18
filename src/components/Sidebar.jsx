@@ -74,14 +74,17 @@ export default function Sidebar() {
         </Link>
 
         {/* Card de Perfil Laranja */}
-        <div className="bg-senac-orange rounded-full py-2 px-3 flex cursor-pointer hover:brightness-110 transition-all shadow-md">
+        <Link
+          to="/coordenador"
+          className="bg-senac-orange rounded-full py-2 px-3 flex cursor-pointer hover:brightness-110 transition-all shadow-md"
+        >
           <div className="flex items-center gap-1">
             <UserRound size={16} className="text-senac-blue" />
             <span className="font-semibold text-sm text-senac-blue">
               Coordenador
             </span>
           </div>
-        </div>
+        </Link>
       </div>
     </aside>
   );

@@ -7,6 +7,9 @@ export default function Dashboard() {
   const [historico, setHistorico] = useState([]);
   const [gerenciamento, setGerenciamento] = useState([]);
   const [loading, setLoading] = useState(true);
+  // Estados para controlar se o Modal está aberto ou fechado
+  const [modalHistoricoOpen, setModalHistoricoOpen] = useState(false);
+  const [modalRepassesOpen, setModalRepassesOpen] = useState(false);
 
   useEffect(() => {
     // Dispara todas as buscas simuladas em paralelo
@@ -101,7 +104,10 @@ export default function Dashboard() {
             <h2 className="text-xl font-bold text-senac-blue-title">
               Histórico de chaves
             </h2>
-            <button className="text-senac-blue font-normal hover:underline">
+            <button
+              onClick={() => setModalHistoricoOpen(true)}
+              className="text-senac-blue font-normal hover:underline"
+            >
               Ver todos
             </button>
           </div>
@@ -179,12 +185,60 @@ export default function Dashboard() {
               </div>
             ))}
 
-            <button className="text-center text-senac-blue font-semibold text-xs hover:underline mt-auto pt-4">
+            <button
+              onClick={() => setModalRepassesOpen(true)}
+              className="text-center text-senac-blue font-semibold text-xs hover:underline mt-auto pt-4"
+            >
               Ver todos
             </button>
           </div>
         </div>
       </div>
+
+      {/* MODAL HISTÓRICO COMPLETO */}
+      {modalHistoricoOpen && (
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-[30px] p-8 w-full max-w-4xl max-h-[80vh] flex flex-col shadow-2xl relative animate-[zoomIn_0.2s_ease-out]">
+            <button
+              onClick={() => setModalHistoricoOpen(false)}
+              className="absolute top-6 right-6 text-gray-400 hover:text-gray-700 font-bold text-xl cursor-pointer"
+            >
+              X
+            </button>
+            <h2 className="text-2xl font-bold text-senac-blue mb-6">
+              Histórico Completo de Chaves
+            </h2>
+            <div className="flex-1 overflow-auto border rounded-xl p-4 bg-gray-50">
+              <p className="text-center text-gray-500 mt-10">
+                Aqui a equipe de integração vai fazer um .map() com todos os
+                dados do banco para renderizar a tabela completa.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* MODAL REPASSES COMPLETO */}
+      {modalRepassesOpen && (
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-[30px] p-8 w-full max-w-md max-h-[80vh] flex flex-col shadow-2xl relative animate-[zoomIn_0.2s_ease-out]">
+            <button
+              onClick={() => setModalRepassesOpen(false)}
+              className="absolute top-6 right-6 text-gray-400 hover:text-gray-700 font-bold text-xl cursor-pointer"
+            >
+              X
+            </button>
+            <h2 className="text-2xl font-bold text-senac-blue mb-6">
+              Todos os Repasses
+            </h2>
+            <div className="flex-1 overflow-auto flex flex-col gap-4 bg-gray-50 rounded-xl p-4 border border-gray-100">
+              <p className="text-center text-gray-500 mt-10">
+                Lista completa de repasses será carregada aqui via API.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
